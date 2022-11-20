@@ -25,12 +25,48 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // route List
+  int _routeIndex = 0;
+  List<Widget> routeList = [
+    const Center(
+      child: Text("Login"),
+    ),
+    const Center(
+      child: Text("About Me"),
+    ),
+    const Center(
+      child: Text("Menu"),
+    ),
+    const Center(
+      child: Text("Create"),
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Demo App"),
+      ),
+      body: routeList.elementAt(_routeIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(label: 'Login', icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+              label: 'About Me', icon: Icon(Icons.graphic_eq)),
+          BottomNavigationBarItem(label: 'Menu', icon: Icon(Icons.settings)),
+          BottomNavigationBarItem(label: 'Create', icon: Icon(Icons.call)),
+        ],
+        currentIndex: _routeIndex,
+        onTap: (index) {
+          setState(() {
+            _routeIndex = index;
+            print(index);
+          });
+        },
+        backgroundColor: Colors.blueGrey,
+        selectedItemColor: Colors.tealAccent,
+        unselectedItemColor: Colors.white,
       ),
     );
   }
