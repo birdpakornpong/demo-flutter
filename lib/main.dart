@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screen/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,9 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // route List
   int _routeIndex = 0;
   List<Widget> routeList = [
-    const Center(
-      child: Text("Login"),
-    ),
+    LoginScreen(),
     const Center(
       child: Text("About Me"),
     ),
@@ -44,9 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Demo App"),
-      ),
       body: routeList.elementAt(_routeIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
