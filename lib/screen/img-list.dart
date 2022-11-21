@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './img-list2.dart';
 
 class ImgList extends StatelessWidget {
   const ImgList({Key? key}) : super(key: key);
@@ -33,7 +34,25 @@ class _MyImgListState extends State<MyImgList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Bird Flutter"),
+        title: const Text("ดูเพิ่ม"),
+        actions: [
+          GestureDetector(
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Icon(
+                Icons.add,
+                size: 40,
+              ),
+            ),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const ImgList2();
+                },
+              ));
+            },
+          )
+        ],
       ),
       body: Center(
         child: Column(

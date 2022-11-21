@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './screen/login.dart';
 import './screen/about-me.dart';
 import './screen/menu-list.dart';
+import './screen/img-list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,9 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     LoginScreen(),
     AboutMe(),
     MenuList(),
-    const Center(
-      child: Text("Create"),
-    )
+    const ImgList()
   ];
 
   @override
