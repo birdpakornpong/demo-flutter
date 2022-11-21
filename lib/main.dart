@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screen/login.dart';
 import './screen/about-me.dart';
+import './screen/menu-list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,9 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> routeList = [
     LoginScreen(),
     AboutMe(),
-    const Center(
-      child: Text("Menu"),
-    ),
+    MenuList(),
     const Center(
       child: Text("Create"),
     )
